@@ -24,7 +24,9 @@ customer_1 = Customer.new({
   'address_post_code' => 'EH1 1XX'
   })
 
-  customer_1.save()
+customer_1.save()
+
+customer_1.delete()
 
 binding.pry
 nil

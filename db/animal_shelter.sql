@@ -1,5 +1,5 @@
 DROP TABLE adoptions;
-DROP TABLE customer;
+DROP TABLE customers;
 DROP TABLE animals;
 
 CREATE TABLE customers
