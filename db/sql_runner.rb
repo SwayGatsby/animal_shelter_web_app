@@ -10,4 +10,5 @@ class SqlRunner
        db.close
      end
      return result
+   end
 end
