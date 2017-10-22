@@ -1,3 +1,4 @@
+require('pry')
 require_relative('../models/animal.rb')
 
 animal_1 = Animal.new({
@@ -9,3 +10,8 @@ animal_1 = Animal.new({
   })
 
 animal_1.save()
+
+Animal.all()
+
+binding.pry
+nil
