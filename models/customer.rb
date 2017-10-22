@@ -53,4 +53,25 @@ class Customer
     return Customer.new(results[0])
   end
 
+  def update()
+    sql = "UPDATE customers
+    SET
+    (
+      first_name,
+      last_name,
+      phone,
+      email,
+      address_line_1,
+      address_line_2,
+      address_city,
+      address_post_code
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6, $7, $8
+    )
+    WHERE id = $9"
+    values = [@first_name, @last_name, @phone, @email, @address_line_1, @address_line_2, @address_city, @address_post_code, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end
