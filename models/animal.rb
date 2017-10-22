@@ -1,3 +1,4 @@
+require('date')
 require_relative('../db/sql_runner.rb')
 
 class Animal
@@ -9,7 +10,7 @@ class Animal
     @name = options['name']
     @type = options['type']
     @breed = options['breed']
-    @admission_date = options['admission_date']
+    @admission_date = Date.parse(options['admission_date'])
     @adoptable = options['adoptable']
   end
 

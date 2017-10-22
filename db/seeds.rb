@@ -1,13 +1,14 @@
 require('pry')
 require_relative('../models/animal.rb')
 require_relative('../models/customer.rb')
+require_relative('../models/adoption.rb')
 
 
 animal_1 = Animal.new({
   'name' => 'Agent Cooper',
   'type' => 'Dog',
   'breed' => 'Labrador Retriever',
-  'admission_date' => '2017-10-22',
+  'admission_date' => '22/09/2017',
   'adoptable' => true
   })
 
@@ -26,7 +27,14 @@ customer_1 = Customer.new({
 
 customer_1.save()
 
-customer_1.delete()
+adoption_1 = Adoption.new({
+  'animal_id' => animal_1.id,
+  'customer_id' => customer_1.id,
+  'date_adopted' => '10/10/2017',
+  'checkup_date' => '10/12/2017'
+  })
+
+adoption_1.save()
 
 binding.pry
 nil
