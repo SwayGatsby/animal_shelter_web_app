@@ -31,4 +31,11 @@ class Adoption
     @id = results.first()['id'].to_i()
   end
 
+  def self.all()
+    sql = "SELECT * FROM adoptions"
+    values = []
+    results = SqlRunner.run(sql, values)
+    return results.map{|adoption| Adoption.new(adoption)}
+  end
+
 end
