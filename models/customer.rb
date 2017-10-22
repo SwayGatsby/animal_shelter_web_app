@@ -45,4 +45,12 @@ class Customer
     return results.map{|customer| Customer.new(customer)}
   end
 
+  def self.find()
+    sql = "SELECT * FROM customers
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Customer.new(results[0])
+  end
+
 end
