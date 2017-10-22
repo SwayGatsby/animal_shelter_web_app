@@ -8,10 +8,9 @@ animal_1 = Animal.new({
   'admission_date' => '2017-10-22',
   'adoptable' => true
   })
-
+  
 animal_1.save()
 
-Animal.all()
 
 
 binding.pry

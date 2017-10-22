@@ -47,5 +47,29 @@ class Animal
     return Animal.new(results[0])
   end
 
+  def update()
+    sql = "UPDATE animals
+    SET
+    (
+      name,
+      type,
+      breed,
+      admission_date,
+      adoptable
+    ) =
+    (
+      $1, $2, $3, $4, $5
+    )
+    WHERE id = $6"
+    values = [@name, @type, @breed, @admission_date, @adoptable, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+  sql = "DELETE FROM animals
+  WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+  end
 
 end
