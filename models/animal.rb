@@ -41,13 +41,14 @@ class Animal
     return results.map{|animal| Animal.new(animal)}
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM animals
     WHERE id = $1"
     values = [id]
-    results = SqlRunner.run(sql, values)
-    return Animal.new(results[0])
+    animal = SqlRunner.run(sql, values)
+    return Animal.new(animal[0])
   end
+
 
   def self.adoptable()
     sql = "SELECT * FROM animals
@@ -60,13 +61,14 @@ class Animal
   #TODO: change adoptable to return yes or no strings when .all is called.
 
   #TODO: rethink how to return if adoptable or not within the general all enumeration
-  # def is_adoptable()
-  #   if animal.adoptable == true
-  #     return "Ready for adoption"
-  #   else
-  #     return "Not yet ready for adoption"
-  #   end
-  # end
+
+  def is_adoptable()
+    if adoptable
+      return "Ready for adoption"
+    else
+      return "Not yet ready for adoption"
+    end
+  end
 
   def update()
     sql = "UPDATE animals

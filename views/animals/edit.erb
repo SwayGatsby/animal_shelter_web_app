@@ -1,0 +1,25 @@
+<form method="post" action="/animals/<%= @animal.id %>">
+  <label for "name">Name:</label>
+  <input type="text" name="name" id="name-field" value="<%= @animal.name %>" />
+
+  <label for="type-selection">Select animal type:</label>
+  <select id="animal-type" name="type">
+    <option value="Dog" <%= "selected" if @animal.type == "Dog" %>>Dog</option>
+    <option value="Cat"<%= "selected" if @animal.type == "Cat" %>>Cat</option>
+  </select>
+
+  <label for="breed">Breed:</label>
+  <input id="breed-field" type="text" name="breed" value="<%= @animal.breed %>" />
+
+  <label for="admission-date">Admission Date:</label>
+  <input id= "admission-date" type="date" name="admission_date" value="<%= @animal.admission_date %>"/>
+
+  <label for="adoptable-selection">Ready for Adoption:</label>
+  <select id="adoptable" name="adoptable">
+    <option value="true" <%= "selected" if @animal.adoptable == "true" %>>True</option>
+    <option value="false" <%= "selected" if @animal.adoptable == "false" %>>False</option>
+  </select>
+
+
+  <input type='submit' value="Edit Animal">
+</form>
