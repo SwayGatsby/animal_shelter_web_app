@@ -81,4 +81,16 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
+
+  def animals()
+    sql = "SELECT animals.*
+    FROM animals
+    INNER JOIN adoptions
+    ON adoptions.animal_id = animals.id
+    WHERE adoptions.customer_id = $1"
+    values = [@id]
+    animals_data = SqlRunner.run(sql, values)
+    return Animal.map_items(animal_data)
+  end
+
 end

@@ -12,6 +12,7 @@ class Animal
     @breed = options['breed']
     @admission_date = Date.parse(options['admission_date'])
     @adoptable = options['adoptable']
+
     #TODO: add picture - url not practical for good ux. consider options.
   end
 
@@ -63,7 +64,7 @@ class Animal
   #TODO: rethink how to return if adoptable or not within the general all enumeration
 
   def is_adoptable()
-    if adoptable
+    if @adoptable == "t"
       return "Ready for adoption"
     else
       return "Not yet ready for adoption"
