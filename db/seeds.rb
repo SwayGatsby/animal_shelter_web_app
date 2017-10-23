@@ -14,6 +14,16 @@ animal_1 = Animal.new({
 
 animal_1.save()
 
+animal_2 = Animal.new({
+  'name' => 'Blue Rose',
+  'type' => 'Dog',
+  'breed' => 'Irish Wolfhound',
+  'admission_date' => '22/09/2017',
+  'adoptable' => false
+  })
+
+animal_2.save()
+
 customer_1 = Customer.new({
   'first_name' => 'Kayla',
   'last_name' => 'Fowler',
@@ -35,6 +45,8 @@ adoption_1 = Adoption.new({
   })
 
 adoption_1.save()
+
+
 
 binding.pry
 nil

@@ -1,0 +1,8 @@
+<% @animals.each do |animal| %>
+  <p>Name: <%= animal.name %></p>
+  <p>Type: <%= animal.type %></p>
+  <p>Breed: <%= animal.breed %></p>
+  <p>Admission Date: <%= animal.admission_date.to_s() %></p>
+<% end %>
+
+<!-- TODO: add img & button to update animal -->

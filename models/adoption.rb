@@ -38,4 +38,16 @@ class Adoption
     return results.map{|adoption| Adoption.new(adoption)}
   end
 
+  def customer()
+    sql = "SELECT * FROM customers
+    WHERE id = $1"
+    values = [@customer_id]
+    results = SqlRunner.run(sql, values)
+    return Customer.new(results[0])
+  end
+
+
+
+
+
 end

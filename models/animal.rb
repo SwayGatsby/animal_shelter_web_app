@@ -12,6 +12,7 @@ class Animal
     @breed = options['breed']
     @admission_date = Date.parse(options['admission_date'])
     @adoptable = options['adoptable']
+    #TODO: add picture - url not practical for good ux. consider options.
   end
 
   def save()
@@ -47,6 +48,25 @@ class Animal
     results = SqlRunner.run(sql, values)
     return Animal.new(results[0])
   end
+
+  def self.adoptable()
+    sql = "SELECT * FROM animals
+    WHERE adoptable"
+    values = []
+    results = SqlRunner.run(sql, values)
+    return results.map{|animal| Animal.new(animal)}
+  end
+
+  #TODO: change adoptable to return yes or no strings when .all is called.
+
+  #TODO: rethink how to return if adoptable or not within the general all enumeration
+  # def is_adoptable()
+  #   if animal.adoptable == true
+  #     return "Ready for adoption"
+  #   else
+  #     return "Not yet ready for adoption"
+  #   end
+  # end
 
   def update()
     sql = "UPDATE animals
