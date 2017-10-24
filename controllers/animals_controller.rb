@@ -32,3 +32,8 @@ post '/animals/:id' do
   @animal.update()
   redirect to '/animals'
 end
+
+get '/animals/in_shelter' do
+  @animals = Animal.get_unadopted_animals
+  erb(:"animals/in_shelter")
+end

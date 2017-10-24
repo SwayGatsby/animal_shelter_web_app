@@ -13,8 +13,6 @@ class Animal
     @breed = options['breed']
     @admission_date = Date.parse(options['admission_date'])
     @adoptable = options['adoptable']
-
-    #TODO: add picture - url not practical for good ux tho research other options
   end
 
   def save()
@@ -51,7 +49,6 @@ class Animal
     return Animal.new(animal[0])
   end
 
-
   def self.adoptable()
     sql = "SELECT * FROM animals
     WHERE adoptable"
@@ -59,7 +56,6 @@ class Animal
     results = SqlRunner.run(sql, values)
     return results.map{|animal| Animal.new(animal)}
   end
-
 
   def is_adoptable?()
     if @adoptable == "t"
@@ -98,6 +94,14 @@ class Animal
   #   sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = animals.id"
   # end
 
-  # def get_unadopted_animals()
+  def self.get_unadopted_animals()
+    sql = "SELECT * FROM animals
+    LEFT JOIN adoptions
+    ON adoptions.animal_id = animals.id
+    WHERE adoptions.id is NULL"
+    values = []
+    results = SqlRunner.run(sql,values)
+    return results.map{|animal| Animal.new(animal)}
+  end
 
 end
