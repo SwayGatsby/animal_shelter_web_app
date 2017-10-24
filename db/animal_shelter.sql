@@ -18,6 +18,7 @@ CREATE TABLE customers
 CREATE TABLE animals
 (
   id SERIAL8 PRIMARY KEY,
+  photo VARCHAR(255),
   name VARCHAR(255) NOT NULL,
   type VARCHAR(255) NOT NULL,
   breed VARCHAR(255),

@@ -6,6 +6,7 @@ require_relative('../models/successful_adoptions.rb')
 
 
 animal_1 = Animal.new({
+  'photo' => 'https://i.imgur.com/aPAR4af.jpg',
   'name' => 'Agent Cooper',
   'type' => 'Dog',
   'breed' => 'Labrador Retriever',
@@ -16,6 +17,7 @@ animal_1 = Animal.new({
 animal_1.save()
 
 animal_2 = Animal.new({
+  'photo' => 'https://i.imgur.com/L4hWyox.jpg',
   'name' => 'Blue Rose',
   'type' => 'Dog',
   'breed' => 'Irish Wolfhound',

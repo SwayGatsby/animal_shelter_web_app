@@ -2,6 +2,9 @@
   <label for "name">Name:</label>
   <input type="text" name="name" id="name-field" value="<%= @animal.name %>" />
 
+  <label for "photo">Photo URL:</label>
+  <input type="text" name="photo" id="photo-field" value="<%= @animal.photo %>" />
+
   <label for="type-selection">Select animal type:</label>
   <select id="animal-type" name="type">
     <option value="Dog" <%= "selected" if @animal.type == "Dog" %>>Dog</option>

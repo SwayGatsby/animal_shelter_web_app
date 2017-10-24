@@ -3,11 +3,12 @@ require_relative('../db/sql_runner.rb')
 
 class Animal
 
-  attr_reader(:id, :name, :type, :breed, :admission_date, :adoptable)
-  attr_writer(:name, :type, :breed, :admission_date, :adoptable)
+  attr_reader(:id, :name, :type, :breed, :admission_date, :adoptable, :photo)
+  attr_writer(:name, :type, :breed, :admission_date, :adoptable, :photo)
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
+    @photo = options['photo'] if options['photo']
     @name = options['name']
     @type = options['type']
     @breed = options['breed']
@@ -18,6 +19,7 @@ class Animal
   def save()
     sql = "INSERT INTO animals
     (
+      photo,
       name,
       type,
       breed,
@@ -26,10 +28,10 @@ class Animal
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @type, @breed, @admission_date, @adoptable]
+    values = [@photo, @name, @type, @breed, @admission_date, @adoptable]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
   end
@@ -69,6 +71,7 @@ class Animal
     sql = "UPDATE animals
     SET
     (
+      photo,
       name,
       type,
       breed,
@@ -76,10 +79,10 @@ class Animal
       adoptable
     ) =
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $6"
-    values = [@name, @type, @breed, @admission_date, @adoptable, @id]
+    WHERE id = $7"
+    values = [@photo, @name, @type, @breed, @admission_date, @adoptable, @id]
     SqlRunner.run(sql, values)
   end
 
