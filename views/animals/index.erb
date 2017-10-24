@@ -5,6 +5,5 @@
   <p>Breed: <%= animal.breed %></p>
   <p>Admission Date: <%= animal.admission_date.to_s() %></p>
   <p>Ready for Adoption: <%= animal.is_adoptable?() %></p>
+  <p><a href="/animals/<%= animal.id %>/edit">Edit Details</a></p>
 <% end %>
-
-<!-- TODO: add img & button to update animal -->
