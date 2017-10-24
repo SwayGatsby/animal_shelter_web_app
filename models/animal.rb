@@ -4,6 +4,7 @@ require_relative('../db/sql_runner.rb')
 class Animal
 
   attr_reader(:id, :name, :type, :breed, :admission_date, :adoptable)
+  attr_writer(:name, :type, :breed, :admission_date, :adoptable)
 
   def initialize(options)
     @id = options['id'].to_i() if options['id']
@@ -11,8 +12,6 @@ class Animal
     @type = options['type']
     @breed = options['breed']
     @admission_date = Date.parse(options['admission_date'])
-
-
     @adoptable = options['adoptable']
 
     #TODO: add picture - url not practical for good ux tho research other options
@@ -61,9 +60,6 @@ class Animal
     return results.map{|animal| Animal.new(animal)}
   end
 
-  #TODO: change adoptable to return yes or no strings when .all is called.
-
-  #TODO: rethink how to return if adoptable or not within the general all enumeration
 
   def is_adoptable?()
     if @adoptable == "t"
@@ -97,5 +93,11 @@ class Animal
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+  # def self.get_adopted_animals()
+  #   sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = animals.id"
+  # end
+
+  # def get_unadopted_animals()
 
 end

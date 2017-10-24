@@ -30,6 +30,10 @@ class Adoption
     values = [@animal_id, @customer_id, @date_adopted, @checkup_date]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
+
+    # Animal record boolean needs to be set to false
+
+    @id = results.first()['id'].to_i()
   end
 
   def self.all()
@@ -38,14 +42,6 @@ class Adoption
     results = SqlRunner.run(sql, values)
     return results.map{|adoption| Adoption.new(adoption)}
   end
-
-  # def customers()
-  #   sql = "SELECT * FROM customers
-  #   WHERE id = $1"
-  #   values = [@customer_id]
-  #   results = SqlRunner.run(sql, values)
-  #   return Customer.new(results[0])
-  # end
 
   def self.customers_that_adopted()
     sql = "SELECT customers.first_name, customers.last_name, animals.name, animals.type, adoptions.date_adopted, adoptions.checkup_date
@@ -58,5 +54,7 @@ class Adoption
     results = SqlRunner.run(sql, values)
     results.map{|result| SuccessfulAdoptions.new(result)}
   end
+
+
 
 end

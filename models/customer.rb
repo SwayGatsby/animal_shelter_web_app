@@ -89,8 +89,7 @@ class Customer
     ON adoptions.animal_id = animals.id
     WHERE adoptions.customer_id = $1"
     values = [@id]
-    animals_data = SqlRunner.run(sql, values)
-    return Animal.map_items(animal_data)
+    results = SqlRunner.run(sql, values)
+    return results.map{|result| Animal.new(result)}
   end
-
 end

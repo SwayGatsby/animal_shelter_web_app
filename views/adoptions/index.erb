@@ -1,8 +1,8 @@
 <% @adoptions.each do |adoption|%>
-<p>First Name: <%= customer.first_name%></p>
-<p>Last Name: <%= customer.last_name%></p>
-<p>Animal Name: <%= customer.name%></p>
-<p>Animal Type: <%= customer.type%></p>
-<p>Date of Adoption: <%= customer.date_adopted%></p>
-<p>Customer Check-up Date <%= customer.checkup_date%></p>
+<p>First Name: <%= adoption.first_name%></p>
+<p>Last Name: <%= adoption.last_name%></p>
+<p>Animal Name: <%= adoption.name%></p>
+<p>Animal Type: <%= adoption.type%></p>
+<p>Date of Adoption: <%= adoption.adoption_date%></p>
+<p>Customer Check-up Date <%= adoption.checkup_date%></p>
 <% end %>
