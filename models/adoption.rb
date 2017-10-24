@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require('pry')
 
 
 class Adoption
@@ -38,16 +39,24 @@ class Adoption
     return results.map{|adoption| Adoption.new(adoption)}
   end
 
-  def customer()
-    sql = "SELECT * FROM customers
-    WHERE id = $1"
-    values = [@customer_id]
+  # def customers()
+  #   sql = "SELECT * FROM customers
+  #   WHERE id = $1"
+  #   values = [@customer_id]
+  #   results = SqlRunner.run(sql, values)
+  #   return Customer.new(results[0])
+  # end
+
+  def self.customers_that_adopted()
+    sql = "SELECT customers.first_name, customers.last_name, animals.name, animals.type, adoptions.date_adopted, adoptions.checkup_date
+    FROM customers
+    INNER JOIN adoptions
+    ON adoptions.customer_id = customers.id
+    INNER JOIN animals
+    ON animals.id = adoptions.animal_id"
+    values = []
     results = SqlRunner.run(sql, values)
-    return Customer.new(results[0])
+    results.map{|result| SuccessfulAdoptions.new(result)}
   end
-
-
-
-
 
 end

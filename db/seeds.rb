@@ -2,6 +2,7 @@ require('pry')
 require_relative('../models/animal.rb')
 require_relative('../models/customer.rb')
 require_relative('../models/adoption.rb')
+require_relative('../models/successful_adoptions.rb')
 
 
 animal_1 = Animal.new({
