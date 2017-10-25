@@ -53,7 +53,7 @@ class Animal
 
   def self.adoptable()
     sql = "SELECT * FROM animals
-    WHERE adoptable"
+    WHERE adoptable is true"
     values = []
     results = SqlRunner.run(sql, values)
     return results.map{|animal| Animal.new(animal)}

@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 
 get '/animals' do
-  @animals = Animal.all()
+  @animals = Animal.get_unadopted_animals()
   erb (:"animals/index")
 end
 
@@ -33,7 +33,7 @@ post '/animals/:id' do
   redirect to '/animals'
 end
 
-get '/animals/in_shelter' do
-  @animals = Animal.get_unadopted_animals
-  erb(:"animals/in_shelter")
-end
+# get '/animals/in_shelter' do
+#   @animals = Animal.get_unadopted_animals
+#   erb(:"animals/in_shelter")
+# end
