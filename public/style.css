@@ -71,3 +71,14 @@ a:active{
   width: 28%;
   background-color: white;
 }
+
+.animals_link {
+    width: 60%;
+    background-color: white;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+}
