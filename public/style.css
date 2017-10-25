@@ -9,6 +9,7 @@ html{
   text-align: center;
   display: inline-block;
   width: 100%;
+  border-bottom: solid 1px black;
 }
 
 ul {
@@ -72,13 +73,12 @@ a:active{
   background-color: white;
 }
 
-.animals_link {
-    width: 60%;
-    background-color: white;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: auto;
+.welcome{
+  margin: auto;
+   width: 50%;
+   border: 3px solid white;
+   max-width: 400px;
+   display: block;
+   margin: auto;
+
 }
