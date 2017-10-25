@@ -1,5 +1,8 @@
+html{
+  background-color: rgb(109, 160, 242);
+}
 .navbar {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   position: fixed;
   left: 0;
   top: 0;
@@ -20,14 +23,14 @@ li {
   font-family: 'Cabin', sans-serif;
   font-size: 18px;
   font-weight: 300;
-  margin: 25px 20px;
+  margin: 25px 30px;
   text-transform: uppercase;
 }
 
 .logo {
   max-width: 120px;
   float: left;
-  margin-right: -120px;
+  margin-right: -110px;
   padding-top: 5px;
   padding-left: 30px;
   padding-bottom: 5px;
@@ -40,5 +43,31 @@ a:link {
 a:visited {
   color: inherit;
 }
-a:hover
-a:active
+a:hover{
+
+}
+a:active{
+
+}
+
+.animal_pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: black solid 1px;
+}
+
+.body {
+  margin-top: 150px;
+}
+
+.container{
+  border: solid 1px black;
+  color: black;
+  margin: 0 1% 2% 1%;
+  padding-top: 5px;
+  text-align: center;
+  display: inline-block;
+  width: 28%;
+  background-color: white;
+}

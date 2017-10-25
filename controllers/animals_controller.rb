@@ -23,15 +23,16 @@ post '/animals' do
 end
 
 get '/animals/:id/edit' do
-  @animal = Animal.find(params[:id].to_i())
+  @animal = Animal.find(params[:id])
   erb(:"animals/edit")
 end
 
+
 post '/animals/:id' do
-  @animal = Animal.new(params)
-  @animal.update()
+  Animal.new(params).update
   redirect to '/animals'
 end
+
 
 # get '/animals/in_shelter' do
 #   @animals = Animal.get_unadopted_animals

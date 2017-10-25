@@ -61,9 +61,9 @@ class Animal
 
   def is_adoptable?()
     if @adoptable == "t"
-      return "Ready for adoption"
+      return "Yes"
     else
-      return "Not yet ready for adoption"
+      return "No"
     end
   end
 
@@ -98,7 +98,11 @@ class Animal
   # end
 
   def self.get_unadopted_animals()
-    sql = "SELECT * FROM animals
+    # sql = "SELECT * FROM animals
+    sql = "SELECT animals.id, animals.photo,
+      animals.name, animals.type, animals.breed,
+      animals.admission_date, animals.adoptable
+    FROM animals
     LEFT JOIN adoptions
     ON adoptions.animal_id = animals.id
     WHERE adoptions.id is NULL"
@@ -106,5 +110,6 @@ class Animal
     results = SqlRunner.run(sql,values)
     return results.map{|animal| Animal.new(animal)}
   end
+
 
 end
