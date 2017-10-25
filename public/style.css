@@ -1,0 +1,44 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+  text-align: center;
+  margin-left: -100px;
+}
+
+li {
+  color: #14213D;
+  display: inline-block;
+  font-family: 'Cabin', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 25px 20px;
+  text-transform: uppercase;
+}
+
+.logo {
+  max-width: 120px;
+  float: left;
+  margin-right: -120px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-bottom: 5px;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+a:hover
+a:active
