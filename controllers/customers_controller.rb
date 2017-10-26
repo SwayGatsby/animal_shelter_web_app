@@ -28,5 +28,5 @@ end
 
 post '/customers/:id' do
   Customer.new(params).update
-  redirect to '/customers'
+  redirect to '/customers/all'
 end

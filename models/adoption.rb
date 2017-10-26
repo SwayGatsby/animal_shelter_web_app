@@ -44,7 +44,7 @@ class Adoption
   end
 
   def self.customers_that_adopted()
-    sql = "SELECT customers.first_name, customers.last_name, animals.name, animals.type, adoptions.date_adopted, adoptions.checkup_date
+    sql = "SELECT customers.first_name, customers.last_name, animals.name, animals.type, adoptions.date_adopted as adoption_date, adoptions.checkup_date
     FROM customers
     INNER JOIN adoptions
     ON adoptions.customer_id = customers.id

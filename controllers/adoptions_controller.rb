@@ -10,6 +10,7 @@ get '/adoptions' do
 end
 
 get '/adoptions/all' do
+  # Uses method created to turn SQL query results into usable objects
   @adoptions = Adoption.customers_that_adopted
   erb(:"adoptions/show")
 end
@@ -20,17 +21,16 @@ end
 
 post '/adoptions' do
   adopted_animal = Animal.find(params['animal_id'].to_i())
-
-  if (adopted_animal.adoptable == "t")
-    # Mark animal as no longer adoptable
-    adopted_animal.adoptable = false
-    adopted_animal.update()
-    # Create new adoption record
-    @adoption = Adoption.new(params)
-    @adoption.save()
-  else
-    # The animal is not adoptable
-    # TODO: Show an error page or similar
-  end
+    if (adopted_animal.adoptable == "t")
+      # Mark animal as no longer adoptable
+      adopted_animal.adoptable = false
+      adopted_animal.update()
+      # Create new adoption record
+      @adoption = Adoption.new(params)
+      @adoption.save()
+    else
+      # The animal is not adoptable
+      # TODO: Show an error page or similar. This requires sessions and will be included in a later iteration.
+    end
   redirect "adoptions/all"
 end
