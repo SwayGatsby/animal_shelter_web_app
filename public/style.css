@@ -24,7 +24,7 @@ li {
   font-family: 'Cabin', sans-serif;
   font-size: 18px;
   font-weight: 300;
-  margin: 25px 30px;
+  margin: 25px 50px;
   text-transform: uppercase;
 }
 
@@ -76,9 +76,8 @@ a:active{
 .welcome{
   margin: auto;
    width: 50%;
-   border: 3px solid white;
+   border: 5px solid white;
    max-width: 400px;
    display: block;
    margin: auto;
-
 }

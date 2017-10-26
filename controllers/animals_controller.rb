@@ -2,9 +2,9 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 
-get '/animals' do
+get '/animals/all' do
   @animals = Animal.get_unadopted_animals()
-  erb (:"animals/index")
+  erb (:"animals/show")
 end
 
 get '/animals/adoptable' do
@@ -19,7 +19,7 @@ end
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save()
-  redirect to '/animals'
+  redirect to '/animals/all'
 end
 
 get '/animals/:id/edit' do
