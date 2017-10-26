@@ -10,7 +10,7 @@ get '/adoptions' do
 end
 
 get '/adoptions/all' do
-  # Uses method created to turn SQL query results into usable objects
+  # Use method created to turn SQL query results into usable objects
   @adoptions = Adoption.customers_that_adopted
   erb(:"adoptions/show")
 end

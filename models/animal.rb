@@ -93,12 +93,9 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  # def self.get_adopted_animals()
-  #   sql = "SELECT * FROM animals INNER JOIN adoptions ON adoptions.animal_id = animals.id"
-  # end
 
   def self.get_unadopted_animals()
-    # sql = "SELECT * FROM animals
+    # sql = "SELECT * FROM animals <-- fixed BUG
     sql = "SELECT animals.id, animals.photo,
       animals.name, animals.type, animals.breed,
       animals.admission_date, animals.adoptable
