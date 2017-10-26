@@ -18,19 +18,19 @@ class Animal
 
   def save()
     sql = "INSERT INTO animals
-    (
-      photo,
-      name,
-      type,
-      breed,
-      admission_date,
-      adoptable
-    )
-    VALUES
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    RETURNING id"
+      (
+        photo,
+        name,
+        type,
+        breed,
+        admission_date,
+        adoptable
+      )
+      VALUES
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      RETURNING id"
     values = [@photo, @name, @type, @breed, @admission_date, @adoptable]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
@@ -45,7 +45,7 @@ class Animal
 
   def self.find(id)
     sql = "SELECT * FROM animals
-    WHERE id = $1"
+      WHERE id = $1"
     values = [id]
     animal = SqlRunner.run(sql, values)
     return Animal.new(animal[0])
@@ -53,7 +53,7 @@ class Animal
 
   def self.adoptable()
     sql = "SELECT * FROM animals
-    WHERE adoptable is true"
+      WHERE adoptable is true"
     values = []
     results = SqlRunner.run(sql, values)
     return results.map{|animal| Animal.new(animal)}
@@ -69,26 +69,26 @@ class Animal
 
   def update()
     sql = "UPDATE animals
-    SET
-    (
-      photo,
-      name,
-      type,
-      breed,
-      admission_date,
-      adoptable
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    WHERE id = $7"
+      SET
+      (
+        photo,
+        name,
+        type,
+        breed,
+        admission_date,
+        adoptable
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      WHERE id = $7"
     values = [@photo, @name, @type, @breed, @admission_date, @adoptable, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete()
     sql = "DELETE FROM animals
-    WHERE id = $1"
+      WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -99,10 +99,10 @@ class Animal
     sql = "SELECT animals.id, animals.photo,
       animals.name, animals.type, animals.breed,
       animals.admission_date, animals.adoptable
-    FROM animals
-    LEFT JOIN adoptions
-    ON adoptions.animal_id = animals.id
-    WHERE adoptions.id is NULL"
+      FROM animals
+      LEFT JOIN adoptions
+      ON adoptions.animal_id = animals.id
+      WHERE adoptions.id is NULL"
     values = []
     results = SqlRunner.run(sql,values)
     return results.map{|animal| Animal.new(animal)}

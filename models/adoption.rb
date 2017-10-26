@@ -30,10 +30,6 @@ class Adoption
     values = [@animal_id, @customer_id, @date_adopted, @checkup_date]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i()
-
-    # Animal record boolean needs to be set to false
-
-    @id = results.first()['id'].to_i()
   end
 
   def self.all()

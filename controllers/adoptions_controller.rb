@@ -21,6 +21,7 @@ end
 
 post '/adoptions' do
   adopted_animal = Animal.find(params['animal_id'].to_i())
+  # TODO: Need to remove from controller and put in model.
     if (adopted_animal.adoptable == "t")
       # Mark animal as no longer adoptable
       adopted_animal.adoptable = false
