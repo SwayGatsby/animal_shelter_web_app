@@ -1,8 +1,8 @@
-<% @adoptions.each do |adoption|%>
-<p>First Name: <%= adoption.first_name%></p>
-<p>Last Name: <%= adoption.last_name%></p>
-<p>Animal Name: <%= adoption.name%></p>
-<p>Animal Type: <%= adoption.type%></p>
-<p>Date of Adoption: <%= adoption.adoption_date%></p>
-<p>Customer Check-up Date <%= adoption.checkup_date%></p>
-<% end %>
+
+<div class="index_links">
+  <ul>
+    <li id="edit"><a class="menu_links" href="/adoptions/new"> <i class="fa fa-plus" aria-hidden="true"></i> Add New Adoption</a></li>
+
+    <li id="all"><a class="menu_links" href="/adoptions/all"> <i class="fa fa-plus" aria-hidden="true"></i> View All Adoptions</a></li>
+  </ul>
+</div>
