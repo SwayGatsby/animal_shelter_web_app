@@ -2,6 +2,10 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 
+get '/animals' do
+  erb(:"animals/index")
+end
+
 get '/animals/all' do
   @animals = Animal.get_unadopted_animals()
   erb (:"animals/show")

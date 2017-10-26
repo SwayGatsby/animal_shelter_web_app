@@ -81,3 +81,34 @@ a:active{
    display: block;
    margin: auto;
 }
+
+.menu_links {
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  vertical-align: central;
+  font-size: 35px;
+  text-decoration: none;
+  font-family: 'Cabin';
+}
+
+#edit {
+border: 5px solid white;
+padding: 40px 200px;
+background-color: #4CAF50;
+color: white;
+}
+
+#all {
+  border: 5px solid white;
+  padding: 40px 180px;
+  background-color: #f44336;
+  color: white;
+}
+
+.index_links{
+  display: block;
+  margin: auto;
+  width: 50%;
+}

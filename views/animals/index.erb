@@ -1,11 +1,9 @@
-  <% @animals.each do |animal| %>
-  <div class="container">
-    <img class="animal_pic" src="<%= animal.photo %>">
-    <p>Name: <%= animal.name %></p>
-    <p>Type: <%= animal.type %></p>
-    <p>Breed: <%= animal.breed %></p>
-    <p>Admission Date: <%= animal.admission_date.to_s() %></p>
-    <p>Ready for Adoption: <%= animal.is_adoptable?() %></p>
-    <p><a href="/animals/<%= animal.id %>/edit">Edit Details</a></p>
-    </div>
-  <% end %>
+<div class="index_links">
+
+<a class="menu_links" id="edit" href src=""> <i class="fa fa-paw" aria-hidden="true"></i>  Add New Animal</a>
+<br>
+<br>
+<br>
+<a class="menu_links" id="all" href src=""> <i class="fa fa-paw" aria-hidden="true"></i>  View / Edit Animals</a>
+
+</div>
