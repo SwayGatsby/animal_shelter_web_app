@@ -1,7 +1,7 @@
 <% @animals.each do |animal| %>
   <div class="container">
     <img class="animal_pic" src="<%= animal.photo %>">
-    <p><b>Name: </b></p><%= animal.name %></p>
+    <p><b>Name: </b><%= animal.name %></p>
     <p><b>Type: </b><%= animal.type %></p>
     <p><b>Breed: </b><%= animal.breed %></p>
     <p><b>Admission Date: </b><%= animal.admission_date.to_s() %></p>

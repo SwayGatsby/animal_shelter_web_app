@@ -7,7 +7,7 @@ get '/animals' do
 end
 
 get '/animals/all' do
-  # Use method created to return animals from adoptions table  & cross-referenced with adoptions table, only returning those who are not on the adoptions table.
+  # Use get_unadopted_animals to return animals from adoptions table that are cross-referenced with adoptions table & only returning those who are not on the adoptions table.
   #BUG: This will create problems with animals that have been adopted and returned to the shelter.
   @animals = Animal.get_unadopted_animals()
   erb (:"animals/show")

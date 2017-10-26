@@ -12,17 +12,21 @@
   <label for "email">Email Address:</label>
   <input type="email" name="email" id="email" value="<%= @customer.email %>" />
 
+  <br>
+  <br>
+
   <label for "address_line_1">Address Line 1:</label>
-  <input type="address_line_1" name="address_line_1" id="address_line_1" value="<%= @customer.address_line_1 %>"
+  <input type="address_line_1" name="address_line_1" id="address_line_1" value="<%= @customer.address_line_1 %>" />
 
   <label for "address_line_2">Address Line 2:</label>
-  <input type="address_line_2" name="address_line_2" id="address_line_2" value="<%= @customer.address_line_2 %>"
+  <input type="address_line_2" name="address_line_2" id="address_line_2" value="<%= @customer.address_line_2 %>" />
 
   <label for "address_city">Address Line 2:</label>
-  <input type="address_city" name="address_city" id="address_city" value="<%= @customer.address_city %>"
+  <input type="address_city" name="address_city" id="address_city" value="<%= @customer.address_city %>" />
 
   <label for "address_post_code">Address Line 2:</label>
   <input type="address_post_code" name="address_post_code" id="address_post_code" value="<%= @customer.address_post_code %>" />
-
-  <input type="submit" value="Edit Customer">
+<br>
+<br>
+  <input id="submit_button" type="submit" value="Edit Customer">
 </form>

@@ -1,6 +1,9 @@
 html{
-  background-color: rgb(109, 160, 242);
+  background-color: rgb(116, 157, 201);
+  font-size: 18px;
 }
+
+
 .navbar {
   background-color: white;
   position: fixed;
@@ -44,12 +47,7 @@ a:link {
 a:visited {
   color: inherit;
 }
-a:hover{
 
-}
-a:active{
-
-}
 
 .animal_pic {
   height: 200px;
@@ -65,12 +63,13 @@ a:active{
 .container{
   border: solid 1px black;
   color: black;
-  margin: 0 1% 2% 1%;
+  margin: 0 1% 2% 3%;
   padding-top: 5px;
   text-align: center;
   display: inline-block;
   width: 28%;
   background-color: white;
+  font-family: sans-serif;
 }
 
 .welcome{
@@ -110,16 +109,19 @@ background-color: #4CAF50;
 
 .index_links{
   display: block;
-  margin: auto;
+  margin-left: 27%;
   width: 50%;
 }
 
 td{
   text-align: center;
+  font-family: 'Helvetica', sans-serif;
 }
 
 tr{
   vertical-align: middle;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
 }
 
 #button {
@@ -135,3 +137,21 @@ tr{
 }
 
 tr:nth-child(even) {background: white}
+
+form{
+  font-family: 'helvetica', sans-serif;
+}
+
+#submit_button {
+  display: block;
+  float: right;
+  margin-right: 40px;
+  background-color: #4CAF50;
+  border: solid 1.5px white;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
