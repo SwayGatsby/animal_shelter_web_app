@@ -3,9 +3,9 @@
   <img class="animal_pic" src="<%= animal.photo %>">
   <p><b>Name:</b> <%= animal.name %></p>
   <p><b>Type:</b> <%= animal.type %></p>
-  <p>Breed: <%= animal.breed %></p>
-  <p>Admission Date: <%= animal.admission_date.to_s() %></p>
-  <p>Ready for Adoption: <%= animal.is_adoptable?() %></p>
+  <p><b>Breed:</b> <%= animal.breed %></p>
+  <p><b>Admission</b> Date: <%= animal.admission_date.to_s() %></p>
+  <p></b>Ready for Adoption:</b> <%= animal.is_adoptable?() %></p>
   <p><a href="/animals/<%= animal.id %>/edit">Edit Details</a></p>
   </div>
 <% end %>

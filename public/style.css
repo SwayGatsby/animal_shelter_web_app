@@ -93,18 +93,19 @@ a:active{
   font-family: 'Cabin';
 }
 
+#edit, #all{
+  display: block;
+  border: 5px solid white;
+  padding: 20px;
+  color: white;
+}
+
 #edit {
-border: 5px solid white;
-padding: 40px 200px;
 background-color: #4CAF50;
-color: white;
 }
 
 #all {
-  border: 5px solid white;
-  padding: 40px 180px;
   background-color: #f44336;
-  color: white;
 }
 
 .index_links{
