@@ -31,7 +31,6 @@ get '/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
-
 post '/animals/:id' do
   Animal.new(params).update
   redirect to '/animals'

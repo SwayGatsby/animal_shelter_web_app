@@ -21,9 +21,12 @@ post '/customers' do
   redirect to '/customers/all'
 end
 
+get '/customers/:id/edit' do
+  @customer = Customer.find(params[:id])
+  erb(:"customers/edit")
+end
 
-#
-# get '/customers/:id/edit' do
-#   @customer = Customer.find(params[:id])
-#   erb(:"customer/edit")
-# end
+post '/customers/:id' do
+  Customer.new(params).update
+  redirect to '/customers'
+end

@@ -45,7 +45,7 @@ class Customer
     return results.map{|customer| Customer.new(customer)}
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM customers
     WHERE id = $1"
     values = [id]
